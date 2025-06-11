@@ -12,7 +12,7 @@ const showGameIntro = () => {
 const startGame = () => {
   toPlay = true;
   document.querySelector(".interface-container").style.display = "none";
-  music.setVolume(0.5);
+  music.setVolume(1);
 
   if (isMobile()) {
     document.querySelector(".container").appendChild(controlsContainer);

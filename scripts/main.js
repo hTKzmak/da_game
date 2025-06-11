@@ -24,7 +24,7 @@ let music;
 // вся логика игры
 class GameScene extends Phaser.Scene {
   init() {
-    const bar = this.add.rectangle(960 - 230, 510, 4, 28, 0xdedede);
+    const bar = this.add.rectangle(960 - 230, 540, 4, 50, 0xdedede);
     this.load.on("progress", (progress) => {
       bar.width = 4 + 460 * progress;
     });
@@ -114,7 +114,7 @@ class GameScene extends Phaser.Scene {
       fill: "#fff",
     });
 
-    music.setVolume(0.1);
+    music.setVolume(0.3);
     music.play();
   }
 
@@ -158,7 +158,7 @@ class GameScene extends Phaser.Scene {
 
   // функция по завершению игры и уничтожению игрока
   hitEnemy(player, enemy) {
-    music.setVolume(0.1);
+    music.setVolume(0.3);
     explosionSound.play();
     gameover = true;
     enemy.destroy();
@@ -181,7 +181,7 @@ class GameScene extends Phaser.Scene {
 
     gameover = false;
 
-    music.setVolume(0.5);
+    music.setVolume(1);
   }
 
   // Функция создания статичных монет с рандомным расположением вне платформ
