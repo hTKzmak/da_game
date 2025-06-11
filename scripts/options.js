@@ -2,17 +2,20 @@ const startGame = () => {
     toPlay = true;
     document.querySelector('.interface-container').style.display = "none";
     music.setVolume(0.5);
+    document.querySelector('.container').appendChild(controlsContainer);
 }
 
 const showGameOver = () => {
     toPlay = false;
     document.querySelector('.interface-container').style.display = "flex";
     document.querySelector('.interface').innerHTML = showScore();
+    document.querySelector('.controls-container').style.opacity = 0;
 }
 
 const retryGame = () => {
     toPlay = true;
     document.querySelector('.interface-container').style.display = "none";
+    document.querySelector('.controls-container').style.opacity = 1;
     gameFuncs.retryGame();
 }
 
