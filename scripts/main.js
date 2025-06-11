@@ -23,6 +23,18 @@ let music;
 
 // вся логика игры
 class GameScene extends Phaser.Scene {
+  init() {
+    const bar = this.add.rectangle(960 - 230, 510, 4, 28, 0xdedede);
+    this.load.on("progress", (progress) => {
+      bar.width = 4 + 460 * progress;
+    });
+
+    this.load.on("complete", () => {
+      bar.destroy();
+      showGameIntro();
+    })
+  }
+
   // предзагрузка ассетов
   preload() {
     this.load.image("platform", "assets/sprites/platform.png");
@@ -37,7 +49,7 @@ class GameScene extends Phaser.Scene {
       frameHeight: 70,
     });
 
-    this.load.audio('music', 'assets/music.mp3');
+    this.load.audio("music", "assets/music.mp3");
     this.load.audio("explosion", "assets/sounds/explosion.mp3");
     this.load.audio("coin", "assets/sounds/coin.mp3");
   }
@@ -46,7 +58,7 @@ class GameScene extends Phaser.Scene {
   create() {
     explosionSound = this.sound.add("explosion", { loop: false });
     coinSound = this.sound.add("coin", { loop: false });
-    music = this.sound.add('music', { loop: true });
+    music = this.sound.add("music", { loop: true });
 
     // добавление группы платформ
     platforms = this.physics.add.staticGroup();

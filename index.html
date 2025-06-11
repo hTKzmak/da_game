@@ -15,14 +15,7 @@
 
   <body>
     <div id="game-container">
-      <div class="container">
-        <div class="interface-container">
-          <div class="interface">
-            <h1>Da game</h1>
-            <button onclick="startGame()">Play</button>
-          </div>
-        </div>
-      </div>
+      <div class="container"></div>
     </div>
   </body>
 
@@ -31,12 +24,12 @@
   <script src="./scripts/controls.js"></script>
 
   <script>
-    document.body.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch((err) => {
-                console.error(`Ошибка перехода в fullscreen: ${err.message}`);
-            });
-        }
+    document.body.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch((err) => {
+          console.error(`Ошибка перехода в fullscreen: ${err.message}`);
+        });
+      }
     });
   </script>
 </html>
