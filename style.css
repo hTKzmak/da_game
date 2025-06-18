@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes showInvisible {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    user-select: none;
+}
+
+h1,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h3,
+button {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 35px;
+    left: 20px;
+    right: 20px;
+
+    z-index: 100;
+}
+
+.control {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 15px;
+    border-radius: 10px;
+    color: #DEDEDE7A;
+    border: 3px solid #DEDEDE7A;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.leftAndRight>.control:last-child {
+    margin-left: 30px;
+}
+
+.interface-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1c1c1c64;
+    z-index: 1000;
+}
+
+.interface {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    align-content: center;
+}
+
+h1 {
+    font-size: 120px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 68px;
+    font-weight: 500;
+}
+
+button {
+    font-size: 34px;
+    font-weight: 500;
+    padding: 10px 51px;
+    border-radius: 10px;
+    color: #DEDEDE;
+    border: 3px solid #DEDEDE;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+button:hover {
+    background-color: #dedede1a;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 65px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 40px;
+        margin-top: 10px;
+    }
+}
